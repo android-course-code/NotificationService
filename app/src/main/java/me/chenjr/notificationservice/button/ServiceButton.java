@@ -3,19 +3,35 @@ package me.chenjr.notificationservice.button;
 
 import android.content.Context;
 import android.support.v7.widget.AppCompatButton;
+import android.util.AttributeSet;
+import android.view.View;
 
 public class ServiceButton extends AppCompatButton {
+    boolean servicesStatus = false;
+    OnClickListener onClickListener = new OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            updateStatus(servicesStatus);
+        }
+    };
     public ServiceButton(Context context) {
         super(context);
-        boolean servicesStatus = false;
-        if (servicesStatus){
-            this.setText("Running");
-            this.setTextColor(0x00ff00);
-        }else {
-            this.setText("Not Running");
-            this.setTextColor(0xff0000);
-        }
+        updateStatus(servicesStatus);
+    }
 
+    public ServiceButton(Context context, AttributeSet attrs) {
+        super(context, attrs);
+        updateStatus(servicesStatus);
+    }
+
+    public void updateStatus(boolean status){
+        if (status){
+            setText("Stop");
+
+        }else {
+            setText("Start");
+
+        }
     }
 
 }
