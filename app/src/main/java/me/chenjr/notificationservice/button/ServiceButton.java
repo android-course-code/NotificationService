@@ -22,9 +22,15 @@ public class ServiceButton extends AppCompatButton {
     public ServiceButton(Context context, AttributeSet attrs) {
         super(context, attrs);
         updateStatus(servicesStatus);
+
+    }
+
+    public boolean getServicesStatus() {
+        return servicesStatus;
     }
 
     public void updateStatus(boolean status){
+        servicesStatus = status;
         if (status){
             setText("Stop");
 

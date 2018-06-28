@@ -2,6 +2,7 @@ package me.chenjr.notificationservice;
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.NotificationChannel;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
@@ -67,6 +68,7 @@ public class HomePageActivity extends AppCompatActivity
         replaceFragment(new HomePageFragment());
         /* 获取权限 */
         getPermission();
+
     }
 
     public void getPermission() {

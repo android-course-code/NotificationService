@@ -37,6 +37,7 @@
         app:layout_constraintRight_toRightOf="parent"
         android:text="Start service"
 
+
         />
     <LinearLayout
         android:id="@+id/frag_home_ll_record_status_group"
